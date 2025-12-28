@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NexBit - цифровые сервисы и решения для вашего бизнеса">
+    <title>NexBit - Цифровые сервисы</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 40px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero .tagline {
+            font-size: 1.3em;
+            opacity: 0.95;
+            margin-bottom: 30px;
+        }
+
+        .hero .subtitle {
+            font-size: 1.1em;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .content {
+            padding: 50px 40px;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3);
+            border-color: #667eea;
+        }
+
+        .service-card .icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .service-card h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+
+        .service-card p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .links-section {
+            background: #f8f9fa;
+            padding: 40px;
+            margin-top: 40px;
+            border-radius: 12px;
+        }
+
+        .links-section h2 {
+            color: #667eea;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
+
+        .link-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .link-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s;
+            border: 2px solid #e0e0e0;
+        }
+
+        .link-card:hover {
+            border-color: #667eea;
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.2);
+        }
+
+        .link-card .icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+
+        .link-card h3 {
+            color: #667eea;
+            margin-bottom: 12px;
+            font-size: 1.2em;
+        }
+
+        .link-card a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-block;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            border-radius: 6px;
+            transition: background 0.3s;
+        }
+
+        .link-card a:hover {
+            background: #764ba2;
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 50px 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .cta-section h2 {
+            font-size: 2.2em;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 35px;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            background: #f0f0f0;
+        }
+
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 30px 40px;
+            text-align: center;
+        }
+
+        .footer p {
+            margin: 5px 0;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2em;
+            }
+
+            .hero .tagline {
+                font-size: 1.1em;
+            }
+
+            .content {
+                padding: 30px 25px;
+            }
+
+            .hero {
+                padding: 50px 25px;
+            }
+
+            .services {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <h1>🚀 NexBit</h1>
+            <p class="tagline">Цифровые сервисы нового поколения</p>
+            <p class="subtitle">Мы предоставляем надёжные и современные решения для вашего бизнеса и личных проектов</p>
+        </div>
+
+        <div class="content">
+            <h2 style="text-align: center; color: #667eea; font-size: 2em; margin-bottom: 30px;">Наши сервисы</h2>
+            
+            <div class="services">
+                <div class="service-card">
+                    <span class="icon">🌐</span>
+                    <h3>Сетевые решения</h3>
+                    <p>Безопасные и быстрые сетевые сервисы для защиты вашей конфиденциальности в интернете</p>
+                </div>
+
+                <div class="service-card">
+                    <span class="icon">☁️</span>
+                    <h3>Облачный хостинг</h3>
+                    <p>Надёжное размещение ваших проектов с гарантией доступности 99.9%</p>
+                </div>
+
+                <div class="service-card">
+                    <span class="icon">🤖</span>
+                    <h3>Боты и автоматизация</h3>
+                    <p>Умные боты для Telegram и других платформ, автоматизирующие ваш бизнес</p>
+                </div>
+
+                <div class="service-card">
+                    <span class="icon">🛠️</span>
+                    <h3>Онлайн-инструменты</h3>
+                    <p>Полезные веб-сервисы и приложения для решения повседневных задач</p>
+                </div>
+
+                <div class="service-card">
+                    <span class="icon">📊</span>
+                    <h3>SaaS решения</h3>
+                    <p>Подписочные сервисы для управления бизнес-процессами</p>
+                </div>
+
+                <div class="service-card">
+                    <span class="icon">💼</span>
+                    <h3>Программные продукты</h3>
+                    <p>Готовые решения для различных отраслей бизнеса</p>
+                </div>
+            </div>
+
+            <div class="links-section">
+                <h2>📋 Юридическая информация</h2>
+                <div class="link-cards">
+                    <div class="link-card">
+                        <div class="icon">🔐</div>
+                        <h3>Политика конфиденциальности</h3>
+                        <a href="privacy.html">Читать</a>
+                    </div>
+
+                    <div class="link-card">
+                        <div class="icon">📄</div>
+                        <h3>Пользовательское соглашение</h3>
+                        <a href="terms.html">Читать</a>
+                    </div>
+
+                    <div class="link-card">
+                        <div class="icon">⚙️</div>
+                        <h3>Контакты</h3>
+                        <a href="contacts.html">Связаться</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h2>Готовы начать?</h2>
+            <p>Свяжитесь с нами и мы поможем выбрать подходящее решение</p>
+            <div class="contact-buttons">
+                <a href="mailto:support@nexbit.example" class="btn">
+                    <span>📧</span>
+                    <span>Написать Email</span>
+                </a>
+                <a href="https://t.me/nexbit_support" class="btn">
+                    <span>💬</span>
+                    <span>Telegram поддержка</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>NexBit</strong> — ваш надёжный партнёр в мире цифровых сервисов</p>
+            <p>&copy; 2025 NexBit. Все права защищены.</p>
+            <p style="margin-top: 15px; font-size: 0.9em;">
+                <a href="privacy.html" style="color: white; margin: 0 10px;">Политика конфиденциальности</a> | 
+                <a href="terms.html" style="color: white; margin: 0 10px;">Пользовательское соглашение</a> | 
+                <a href="contacts.html" style="color: white; margin: 0 10px;">Контакты</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
